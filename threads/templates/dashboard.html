@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+	<title>Arena</title>
+
+</head>
+<body>
+{% for user in ob %}
+<!-- {{user.image.name}} -->
+<img alt="" src="{% static user.image.name %}"><br>
+Name:{{user.user_name}}<br>
+Email ID:{{user.email_id}}<br>
+Score:{{user.score}}<br>
+{% endfor %}
+<center>
+<br>
+<div>
+Post a Question
+	<form action="post" method="POST">
+		{% csrf_token %}
+		Question:<input type="text" name="question"><br>
+		<br>
+		<center> Domain:<input type="text" name="domain"></center>
+		<button type="submit">POST</button>
+	</form>
+</div>
+</center>
+</body>
+</html>

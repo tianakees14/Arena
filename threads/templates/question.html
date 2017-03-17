@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question</title>
+</head>
+<body>
+{% for question in ob %}
+{{question.user_name}}
+{{question.question}}
+{{question.posted}}
+{{question.domain}}<br>
+<form action="reply" method="POST">
+{% csrf_token %}
+<input type="hidden" name="id" value="{{question.id}}">
+<input type="hidden" name="domain" value="{{question.domain}}">
+<input type="text" name="reply">
+<button type="submit">Reply</button>
+</form>
+{% endfor %}
+{% for reply in ob2 %}
+{{reply.reply}}
+{{reply.posted}}
+{{reply.votes}}
+{% endfor %}
+</body>
+</html>

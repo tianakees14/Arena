@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forum</title>
+</head>
+<body>
+<form method="POST" action="register">
+{% csrf_token %}
+<input type="text"  name="user_name" placeholder="User Name">
+<!-- <input type="email" name="email_id"  placeholder="Email ID"> -->
+<input type="text"  name="password"  placeholder="password">
+<button type="submit">Register</button>
+</form>
+</body>
+</html>

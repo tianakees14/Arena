@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+</head>
+<body>
+
+<form action="updateDashboard" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+
+<input type="file" id="exampleInputFile"  name="image">
+<input type="text" name="name" placeholder="Name">
+<input type="text" name="email" placeholder="Email ID">
+<button type="submit">Submit</button>
+	
+</form>
+</body>
+</html>
